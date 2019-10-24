@@ -1,7 +1,6 @@
 # ------------------------- #
 
 class Car
-
     def initialize(year)
         @wheels = 4  #create instance here get at def wheels
         @horn = 'BEEP!'
@@ -32,22 +31,22 @@ class Car
             @lights = 'off'
         end
     end
-    # def signal_right
-    #     if @signal == 'off' || 'left'
-    #         @signal = 'right'
-    #     elsif @signal == 'right'
-    #         @signal = 'off'
-    #     end
-    # end
-    #
-    # def signal_left
-    #     if @signal == 'off' || 'right'
-    #         @signal = 'left'
-    #     elsif @signal == 'left'
-    #         @signal = 'off'
-    #     end
-    # end
 
+    def signal_right
+        if @signal == 'off' || 'left'
+            @signal = 'right'
+        elsif @signal == 'right'
+            @signal = 'off'
+        end
+    end
+
+    def signal_left
+        if @signal == 'off' || 'right'
+            @signal = 'left'
+        elsif @signal == 'left'
+            @signal = 'off'
+        end
+    end
 end
 
 

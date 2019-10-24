@@ -67,21 +67,22 @@ describe 'Car' do
         a_car = Car.new(2001)
         expect {a_car.light_switch}.to change {a_car.lights}.from('off').to('on')
     end
-    # it 'can signal left and turn off signal' do
-    #     a_car = Car.new(2002)
-    #     a_car.light_switch.expect(@lights).to eq('')
-    # end
+    it 'can signal right' do
+        expect {a_car.signal_right}.to change {a_car.signal}.from('off').to('right')
+    end
 
-    # it 'can signal left and turn off signal' do
-    #     a_car = Car.new(2003)
-    #     expect{
-    #         if a_car.signal == 'off'
-    #             @signal = 'left'
-    #         elsif a_car.signal == 'left'
-    #             @signal = 'off'
-    #         end
-    #     }
-    # end
+    it 'can turn off right signal from right' do
+        expect {a_car.signal_right}.to change {a_car.signal}.from('right').to('off')
+    end
+
+    it 'can turn off right signal from right' do
+        expect {a_car.signal_left}.to change {a_car.signal}.from('off').to('left')
+    end
+
+    it 'can turn off right signal from right' do
+        expect {a_car.signal_left}.to change {a_car.signal}.from('left').to('off')
+    end
+
 end
 
 # describe "#light_switch" do
